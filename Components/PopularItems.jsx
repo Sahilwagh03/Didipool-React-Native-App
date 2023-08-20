@@ -3,7 +3,28 @@ import React from 'react'
 import DishImg from '../assets/Photo_Menu.png'
 
 const PopularItems = () => {
+    const data = [
+        {
+            id: '1'
+        },
+        {
+            id: '1'
+        },
+        {
+            id: '1'
+        },
+        {
+            id: '1'
+        },
+        {
+            id: '1'
+        },
+        {
+            id: '1'
+        },
+    ]
     return (
+
         <View style={styles.PopularContainer}>
             <View>
                 <View style={styles.HeaderContainer}>
@@ -11,19 +32,23 @@ const PopularItems = () => {
                     <Text style={styles.headerBtn}>View More</Text>
                 </View>
                 <View>
-                    <ScrollView horizontal={true}>
-                        <View style={styles.Card_container}>
-                            <View style={styles.ImgContainer}>
-                                <Image source={DishImg}></Image>
-                                <View>
-                                    <Text style={styles.heading}>Green Noddle</Text>
-                                    <Text style={styles.subtitle}>Noodle Home</Text>
+                    <ScrollView>
+                        {
+                            data.map((data,index) => (
+                                <View key={index} style={[styles.Card_container, index==5 ? {marginBottom:100}: '']}>
+                                    <View style={styles.ImgContainer}>
+                                        <Image source={DishImg}></Image>
+                                        <View>
+                                            <Text style={styles.heading}>Green Noddle</Text>
+                                            <Text style={styles.subtitle}>Noodle Home</Text>
+                                        </View>
+                                    </View>
+                                    <View>
+                                        <Text style={styles.price}>$15</Text>
+                                    </View>
                                 </View>
-                            </View>
-                            <View>
-                                <Text style={styles.price}>$15</Text>
-                            </View>
-                        </View>
+                            ))
+                        }
                     </ScrollView>
                 </View>
             </View>
@@ -60,26 +85,27 @@ const styles = StyleSheet.create({
         width: 350,
         padding: 10,
         backgroundColor: '#FFF',
-        borderRadius: 10
+        borderRadius: 10,
+        marginBottom:10
     },
-    ImgContainer:{
-        display:'flex',
-        flexDirection:'row',
-        alignItems:'center',
-        gap:20
+    ImgContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 20
     },
-    heading:{
-        fontSize:15,
-        fontWeight:'600',
-        color:'#22242E'
+    heading: {
+        fontSize: 15,
+        fontWeight: '600',
+        color: '#22242E'
     },
-    subtitle:{
-        fontSize:14,
-        opacity:0.3
+    subtitle: {
+        fontSize: 14,
+        opacity: 0.3
     },
-    price:{
-        fontSize:22,
-        fontWeight:'900',
-        color:'#6B50F6'   
+    price: {
+        fontSize: 22,
+        fontWeight: '900',
+        color: '#6B50F6'
     }
 })

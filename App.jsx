@@ -9,6 +9,7 @@ import BuyIcon from './assets/Buy.png'
 import ChatIcon from './assets/Chat.png'
 import Profile from './Components/Profile';
 import OrderScreen from './Components/OrderScreen';
+import Chat from './Components/Chat';
 
 const Tab = createBottomTabNavigator();
 
@@ -169,8 +170,8 @@ const BuyScreen = () => {
 }
 const ChatScreen = () => {
   return (
-    <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-      <Text style={{ fontSize: 24, fontWeight: '700', color: '#6B50F6' }}>Chat</Text>
+    <View>
+      <Chat/>
     </View>
   )
 }
